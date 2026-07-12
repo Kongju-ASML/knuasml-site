@@ -311,6 +311,10 @@ h1 {
   border: 1px solid var(--line);
 }
 
+.expanded-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .workflow-section {
   background: #eef3f6;
 }
@@ -687,6 +691,37 @@ time {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.award-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.activities-section {
+  background: #f7fafc;
+}
+
+.activity-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.activity-list article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 22px;
+}
+
+.activity-list h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.activity-list p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .contact-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
@@ -763,7 +798,10 @@ time {
   }
 
   .project-grid,
-  .data-grid {
+  .data-grid,
+  .activity-list,
+  .award-list,
+  .expanded-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -823,9 +861,12 @@ time {
   .facility-list,
   .join-steps,
   .news-list,
+  .activity-list,
+  .award-list,
   .hero-facts,
   .project-grid,
   .data-grid,
+  .expanded-grid,
   .publication-summary ul,
   .publication-list article {
     grid-template-columns: 1fr;
