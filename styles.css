@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
@@ -633,10 +634,12 @@ time {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
   }
 
   .site-nav {
     justify-content: flex-start;
+    width: 100%;
   }
 
   .hero,
@@ -671,12 +674,40 @@ time {
 }
 
 @media (max-width: 640px) {
+  html {
+    scroll-padding-top: 116px;
+  }
+
+  .site-header {
+    padding: 10px 14px;
+  }
+
   .brand-text {
     display: none;
   }
 
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .site-nav {
+    flex-wrap: nowrap;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
   .site-nav a {
+    flex: 0 0 auto;
     padding: 8px 9px;
+    white-space: nowrap;
   }
 
   h1 {
@@ -704,5 +735,15 @@ time {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .section {
+    padding: 48px 18px;
+  }
+
+  .lead,
+  .about-body p,
+  .contact-copy {
+    font-size: 16px;
   }
 }
