@@ -255,6 +255,23 @@ h1 {
   padding: clamp(58px, 7vw, 96px) clamp(20px, 5vw, 72px);
 }
 
+.page-hero {
+  padding: clamp(64px, 8vw, 116px) clamp(20px, 5vw, 72px) clamp(44px, 6vw, 78px);
+  background:
+    linear-gradient(90deg, rgba(245, 247, 250, 0.98), rgba(245, 247, 250, 0.82)),
+    linear-gradient(135deg, #ffffff, #dce6ed);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero h1 {
+  max-width: 980px;
+  font-size: clamp(38px, 5vw, 68px);
+}
+
+.page-hero .lead {
+  max-width: 920px;
+}
+
 .section-heading {
   max-width: 860px;
   margin-bottom: 34px;
@@ -829,6 +846,55 @@ time {
   color: #d8e1e9;
 }
 
+.summary-grid,
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-grid article,
+.member-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 22px;
+}
+
+.summary-grid h3 a {
+  color: var(--deep);
+  border-bottom: 2px solid var(--gold);
+}
+
+.member-section.light-section {
+  background: #f7fafc;
+}
+
+.member-card {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.member-photo {
+  display: grid;
+  min-height: 210px;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e8edf2, #f8fafc);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.member-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 210px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .site-footer a {
   color: #fff;
   font-weight: 800;
@@ -872,6 +938,8 @@ time {
   .data-grid,
   .activity-list,
   .award-list,
+  .summary-grid,
+  .member-grid,
   .expanded-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -936,6 +1004,8 @@ time {
   .activity-list,
   .award-list,
   .hero-facts,
+  .summary-grid,
+  .member-grid,
   .project-grid,
   .data-grid,
   .expanded-grid,
