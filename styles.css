@@ -159,6 +159,35 @@ h1 {
   margin-top: 34px;
 }
 
+.hero-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 34px 0 0;
+  max-width: 660px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.hero-facts div {
+  background: rgba(255, 255, 255, 0.72);
+  padding: 14px 16px;
+}
+
+.hero-facts dt {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-facts dd {
+  margin: 5px 0 0;
+  color: var(--deep);
+  font-size: 15px;
+  font-weight: 800;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -257,6 +286,37 @@ h1 {
   border: 1px solid var(--line);
 }
 
+.workflow-section {
+  background: #fff;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.workflow article {
+  min-height: 220px;
+  border-left: 4px solid var(--accent-2);
+  background: #f7fafc;
+  padding: 24px;
+}
+
+.workflow span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.workflow h3,
+.project-grid h3,
+.facility-list h3 {
+  font-size: 21px;
+  line-height: 1.25;
+}
+
 .research-grid article {
   min-height: 250px;
   background: var(--panel);
@@ -315,6 +375,58 @@ h1 {
   background: #eef3f6;
 }
 
+.projects-section {
+  background: var(--deep);
+  color: #fff;
+}
+
+.projects-section .eyebrow {
+  color: #e1b968;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.project-grid article {
+  min-height: 230px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 24px;
+}
+
+.project-grid p {
+  color: #d8e1e9;
+  line-height: 1.7;
+}
+
+.facilities-section {
+  background: #fff;
+}
+
+.facility-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.facility-list article {
+  min-height: 220px;
+  background: #fff;
+  padding: 24px;
+}
+
+.facility-list p,
+.workflow p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .publication-list,
 .news-list {
   display: grid;
@@ -351,6 +463,13 @@ time {
 .contact-section h2 {
   font-size: clamp(30px, 4vw, 52px);
   line-height: 1.2;
+}
+
+.contact-copy {
+  max-width: 680px;
+  color: #d8e1e9;
+  font-size: 17px;
+  line-height: 1.75;
 }
 
 .contact-card {
@@ -398,6 +517,15 @@ time {
   .research-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .workflow,
+  .facility-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -419,7 +547,10 @@ time {
   }
 
   .research-grid,
+  .workflow,
+  .facility-list,
   .news-list,
+  .hero-facts,
   .publication-list article {
     grid-template-columns: 1fr;
   }
