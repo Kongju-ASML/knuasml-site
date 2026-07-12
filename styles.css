@@ -278,6 +278,30 @@ h1 {
   line-height: 1.7;
 }
 
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(28px, 5vw, 70px);
+  background: #fff;
+}
+
+.about-copy h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.2;
+}
+
+.about-body {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.about-body p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
 .research-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -287,7 +311,7 @@ h1 {
 }
 
 .workflow-section {
-  background: #fff;
+  background: #eef3f6;
 }
 
 .workflow {
@@ -346,7 +370,35 @@ h1 {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
   gap: clamp(28px, 5vw, 64px);
+  background: #f7fafc;
+}
+
+.join-section {
   background: #fff;
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.join-grid article {
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(21, 32, 43, 0.06);
+}
+
+.join-grid h3 {
+  font-size: 22px;
+}
+
+.join-grid p {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .people-panel {
@@ -505,6 +557,7 @@ time {
   }
 
   .hero,
+  .about-section,
   .split,
   .contact-section {
     grid-template-columns: 1fr;
@@ -524,6 +577,10 @@ time {
   }
 
   .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-grid {
     grid-template-columns: 1fr;
   }
 }
