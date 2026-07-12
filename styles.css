@@ -770,6 +770,45 @@ time {
   font-weight: 800;
 }
 
+.publication-years {
+  display: grid;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.publication-year {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 24px;
+}
+
+.publication-year h2 {
+  color: var(--accent);
+  font-size: 28px;
+}
+
+.publication-year-list {
+  display: grid;
+  gap: 14px;
+}
+
+.publication-entry {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.publication-entry h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.publication-entry p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .news-section {
   background: #fff;
 }
@@ -874,6 +913,21 @@ time {
   display: grid;
   gap: 12px;
   align-content: start;
+}
+
+.member-name-en {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.member-topics {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .member-photo {
