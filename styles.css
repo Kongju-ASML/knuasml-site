@@ -314,6 +314,26 @@ h1 {
   background: #eef3f6;
 }
 
+.keyword-band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 24px clamp(20px, 5vw, 72px);
+  background: #fff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.keyword-band span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #f7fafc;
+  color: var(--deep);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 9px 13px;
+}
+
 .workflow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -399,6 +419,41 @@ h1 {
 .join-grid p {
   color: var(--muted);
   line-height: 1.7;
+}
+
+.join-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.join-steps article {
+  background: #f7fafc;
+  padding: 22px;
+}
+
+.join-steps span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--deep);
+  color: #fff;
+  font-weight: 900;
+}
+
+.join-steps h3 {
+  margin: 18px 0 8px;
+  font-size: 18px;
+}
+
+.join-steps p {
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .people-panel {
@@ -572,6 +627,7 @@ time {
   }
 
   .workflow,
+  .join-steps,
   .facility-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -606,6 +662,7 @@ time {
   .research-grid,
   .workflow,
   .facility-list,
+  .join-steps,
   .news-list,
   .hero-facts,
   .publication-list article {
