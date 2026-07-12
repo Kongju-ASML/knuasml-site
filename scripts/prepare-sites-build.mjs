@@ -1,47 +1,30 @@
-import { copyFile, mkdir, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 
 await mkdir("dist/server", { recursive: true });
 await mkdir("dist/.openai", { recursive: true });
 await copyFile(".openai/hosting.json", "dist/.openai/hosting.json");
 
-const server = `import { readFile } from "node:fs/promises";
-import { extname, join, normalize } from "node:path";
+const htmlSource = await readFile("index.html", "utf8");
+const css = await readFile("styles.css", "utf8");
+const js = await readFile("script.js", "utf8");
+const svg = await readFile("assets/microstructure.svg", "utf8");
+const svgData = `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
 
-const root = new URL("../", import.meta.url);
-const types = {
-  ".html": "text/html; charset=utf-8",
-  ".css": "text/css; charset=utf-8",
-  ".js": "text/javascript; charset=utf-8",
-  ".svg": "image/svg+xml; charset=utf-8",
-  ".png": "image/png",
-  ".jpg": "image/jpeg",
-  ".jpeg": "image/jpeg",
-  ".webp": "image/webp",
-  ".ico": "image/x-icon"
-};
+const html = htmlSource
+  .replace('<link rel="stylesheet" href="styles.css" />', `<style>${css}</style>`)
+  .replace('src="assets/microstructure.svg"', `src="${svgData}"`)
+  .replace('<script type="module" src="script.js"></script>', `<script type="module">${js}</script>`);
+
+const server = `const html = ${JSON.stringify(html)};
 
 export default {
   async fetch(request) {
-    const url = new URL(request.url);
-    const pathname = decodeURIComponent(url.pathname);
-    const cleanPath = normalize(pathname).replace(/^([.][.][\\\\/])+/, "");
-    const filePath = cleanPath === "/" ? "index.html" : cleanPath.replace(/^\\\\|^\\//, "");
-    const target = join(root.pathname, filePath);
-
-    try {
-      const body = await readFile(target);
-      return new Response(body, {
-        headers: {
-          "content-type": types[extname(target)] || "application/octet-stream",
-          "cache-control": "public, max-age=300"
-        }
-      });
-    } catch {
-      const body = await readFile(join(root.pathname, "index.html"));
-      return new Response(body, {
-        headers: { "content-type": "text/html; charset=utf-8" }
-      });
-    }
+    return new Response(html, {
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=300"
+      }
+    });
   }
 };
 `;
