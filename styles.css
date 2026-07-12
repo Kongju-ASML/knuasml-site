@@ -511,6 +511,23 @@ h1 {
   line-height: 1.7;
 }
 
+.project-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d8e1e9;
+  line-height: 1.6;
+  padding: 18px 20px;
+}
+
+.project-note strong {
+  color: #fff;
+}
+
 .facilities-section {
   background: #fff;
 }
