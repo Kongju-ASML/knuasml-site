@@ -778,6 +778,21 @@ h1 {
   padding: 24px;
 }
 
+.capability-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.facility-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f7fafc;
+  margin-bottom: 18px;
+}
+
 .facility-list p,
 .workflow p {
   color: var(--muted);
