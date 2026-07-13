@@ -560,7 +560,22 @@ h1 {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
   gap: clamp(28px, 5vw, 64px);
+  align-items: start;
   background: #f7fafc;
+}
+
+.people-intro {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+}
+
+.people-intro .section-heading h2 {
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.35;
+}
+
+.people-intro .section-heading p {
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .join-section {
