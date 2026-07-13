@@ -569,12 +569,13 @@ h1 {
 }
 
 .people-intro .section-heading h2 {
-  font-size: clamp(24px, 2.4vw, 34px);
-  line-height: 1.35;
+  font-size: clamp(18px, 1.45vw, 22px);
+  line-height: 1.55;
+  font-weight: 750;
 }
 
 .people-intro .section-heading p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
