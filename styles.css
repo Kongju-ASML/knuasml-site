@@ -961,6 +961,49 @@ time {
   line-height: 1.65;
 }
 
+.archive-link {
+  margin-top: 18px;
+}
+
+.activity-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.activity-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(21, 32, 43, 0.06);
+}
+
+.activity-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #eef3f6;
+}
+
+.activity-card div {
+  padding: 16px;
+}
+
+.activity-card h3 {
+  margin: 6px 0 6px;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.activity-card p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .contact-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
@@ -1129,6 +1172,7 @@ time {
   .project-grid,
   .data-grid,
   .activity-list,
+  .activity-card-grid,
   .award-list,
   .award-card-grid,
   .summary-grid,
@@ -1195,6 +1239,7 @@ time {
   .join-steps,
   .news-list,
   .activity-list,
+  .activity-card-grid,
   .award-list,
   .award-card-grid,
   .hero-facts,
