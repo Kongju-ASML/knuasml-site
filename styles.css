@@ -1036,6 +1036,10 @@ time {
   background: #eef3f6;
 }
 
+.activity-card--square img {
+  aspect-ratio: 1;
+}
+
 .activity-card div {
   padding: 16px;
 }
