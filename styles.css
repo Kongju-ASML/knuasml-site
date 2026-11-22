@@ -1343,17 +1343,25 @@ time {
   }
 }
 
-
 .hero-visual.hero-logo {
-  display: grid;
-  place-items: center;
-  padding: clamp(16px, 4vw, 48px);
+  min-height: 0;
+  padding: clamp(8px, 1.5vw, 20px);
   background: #fff;
 }
 
+.hero-logo-frame {
+  position: relative;
+  aspect-ratio: 992 / 360;
+  overflow: hidden;
+}
+
 .hero-visual.hero-logo img {
+  /* Frame the artwork inside the transparent border of the 1120 × 460 PNG. */
+  position: absolute;
+  top: -15.556%;
+  left: -5.645%;
+  width: 112.903%;
   height: auto;
   min-height: 0;
-  max-width: 560px;
-  object-fit: contain;
+  max-width: none;
 }
